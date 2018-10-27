@@ -1,0 +1,91 @@
+﻿
+@{
+    Layout = "_LayoutFull";
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="dashboard-block">
+    <h3>My tokens investment</h3>
+    <div id="dashboardChart"></div>
+    <!-- <div class="dashboard-charts">
+        <div id="dashboardChart"></div>
+    </div> -->
+</div>
+
+<style>
+    .dashboard-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*.dashboard-block .dashboard-charts {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row wrap;
+    }*/
+</style>
+        <div class="col-md-6">
+            <div id="dashboardChart"></div>
+        </div>
+
+        <div class="col-md-6">
+            <div id="balanceChart"></div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script type="text/javascript" src="~/js/charts.js"></script>
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
+
+    <script>
+
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        $(window).on('load', function () {
+
+            $.get("/Content/DashboardData", function (data) {
+                google.charts.setOnLoadCallback(drawCompensChart(data));
+            });
+
+            function drawCompensChart(param) {
+
+                var data = new google.visualization.DataTable(param);
+
+                var option = {
+                    title: 'Miner compensation',
+                    width: 500,
+                    height: 400
+                };
+
+                chart = new google.visualization.LineChart(document.getElementById('dashboardChart'));
+                chart.draw(data, option);
+            }
+        });
+
+        $(window).on('load', function () {
+
+            $.get("/Content/BalanceData", function (data) {
+                google.charts.setOnLoadCallback(drawBalanceChart(data));
+            });
+
+            function drawBalanceChart(param) {
+
+                var data = new google.visualization.DataTable(param);
+
+                var option = {
+                    title: 'Balance history, NKMS',
+                    width: 700,
+                    height: 500
+                };
+
+                chart = new google.visualization.LineChart(document.getElementById('balanceChart'));
+                chart.draw(data, option);
+            }
+        });
+    </script>
+}

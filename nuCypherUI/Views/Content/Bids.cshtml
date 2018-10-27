@@ -1,0 +1,79 @@
+﻿
+@{
+    Layout = "_LayoutFull";
+    ViewData["Title"] = "Bids";
+}
+
+<div class="row">
+    <div class="col-xs-4">
+        <h3>My wallet</h3>
+        <div class="bids-property">
+            <div>Balance:</div>
+            <div>10 NKMS</div>
+        </div>
+        <div>
+            <button class="btn btn-success">Top up</button>
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <h3>My bids</h3>
+        <table class="my-bids-table">
+            <tr>                
+                <th>Date</th>
+                <th>Amount, NKMS</th>
+                <th>Duration, days</th>
+            </tr>
+            <tr>                
+                <td>2018-10-22</td>
+                <td>35,67</td>
+                <td>30</td>
+            </tr>
+            <tr>                
+                <td>2018-10-25</td>
+                <td>63,21</td>
+                <td>180</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-xs-4">
+        <h3>New bid</h3>
+        <!-- <form asp-action="/" asp-controller="Main" asp-antiforgery="true" method="post"> -->
+
+        <div class="row new-bid-block">
+            <div class="col-xs-12 col-md-6">
+                <label>Duration, days:</label>
+                <select name="bid_duration" class="form-control">
+                    <option value="30" selected>30</option>
+                    <option value="60">180</option>
+                    <option value="90">360</option>
+                </select>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <label>Amount, NKMS:</label>
+                <input type="number" min="0" name="bid_amount" class="form-control"/>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <input type="submit" value="Bid" class="btn btn-primary"/>
+            </div>
+        </div>
+
+    <!-- </form> -->
+    </div>
+</div>
+
+<style>
+    .bids-property {
+        display: flex;
+        align-items: center;
+    }
+
+    .my-bids-table tr th, .my-bids-table tr td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    .new-bid-block > div {
+        padding: 15px;
+    }
+</style>
+

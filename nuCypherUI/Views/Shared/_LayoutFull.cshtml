@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - nuCypher network GUI</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class=""> <!-- class="container" -->
+            <div class="navbar-header">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="Content" asp-action="Dashboard">Dashboard</a></li>
+                    <li><a asp-area="" asp-controller="Content" asp-action="Bids">Bids</a></li>
+                    <li><a asp-area="" asp-controller="Content" asp-action="Settings">Settings</a></li>
+                    <li><a asp-area="" asp-controller="Main" asp-action="Logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="body-content"> <!-- class="body-content container" -->
+        @RenderBody()
+        <div class="footer-wrap">
+            <hr />
+            <footer>
+                <p>&copy; 2018 - nuCypher network GUI</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script>
+
+    const { ipcRenderer } = require("electron");
+
+    document.getElementById("btnTest").addEventListener("click", () => {
+
+        ipcRenderer.send("btnTest", 'request');
+    });
+
+    ipcRenderer.on('asynchronous-reply', (event, arg) => {
+
+        const message = `Reply :${arg}`;
+        document.getElementById('headerTest').innerHTML = message;
+    });
+
+</script>

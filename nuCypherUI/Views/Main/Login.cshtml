@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Authorization";
+}
+
+<div class="center-block authorization-block">
+
+    <div class="row">
+        <form asp-action="Login" asp-controller="Main" asp-antiforgery="true" method="post">
+
+            <div class="col-xs-12 auth-title">
+                <h2>Authorization</h2>
+                <img src="/images/lock-icon.png" width="64" height="64"/>
+            </div>
+            <div class="col-xs-12 auth-input">
+                <label>Login:</label>
+                <input type="text" name="login" class="form-control"/>
+            </div>
+            <div class="col-xs-12 auth-input">
+                <label>Password:</label>
+                <input type="password" name="password" class="form-control"/>
+            </div>
+            <div class="col-xs-12 auth-submit">
+                <input type="submit" value="Sign in" class="form-control btn btn-primary"/>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<style>
+    .authorization-block {
+        width: 300px;
+    }
+
+    .authorization-block form > div.auth-submit {
+        margin-top: 20px;
+    }
+
+    .authorization-block form > div.auth-title {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .authorization-block form > div {
+        padding: 8px;
+    }
+</style>

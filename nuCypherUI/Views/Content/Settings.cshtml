@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = "_LayoutFull";
+    ViewData["Title"] = "Settings";
+}
+
+<!-- <div class="container"> -->
+    <div class="row">
+        <div class="col-xs-4 col-md-3">
+            <div class="row settings-block">
+
+                <!-- <form asp-action="/" asp-controller="Main" asp-antiforgery="true" method="post"> -->
+
+                    <div class="col-xs-12">
+                        <label>Default bid duration, days:</label>
+                        <select name="bid_duration" class="form-control">
+                            <option value="30" selected>30</option>
+                            <option value="60">180</option>
+                            <option value="90">360</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-12">
+                        <label>Default bid amount, $:</label>
+                        <input type="number" min="0" name="bid_amount" value="5" class="form-control"/>
+                    </div>
+                    <div class="col-xs-12">
+                        <input type="submit" value="Save" class="btn btn-primary"/>
+                    </div>
+
+                <!-- </form> -->
+
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
+
+<style>
+    .settings-block {
+        padding: 15px;
+    }
+
+    .settings-block > div {
+        padding: 15px 0;
+    }
+
+    /*.dashboard-block .dashboard-charts {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row wrap;
+    }*/
+</style>
