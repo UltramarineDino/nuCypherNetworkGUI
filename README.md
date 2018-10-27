@@ -1,6 +1,7 @@
 # nuCypherNetworkGUI
 
 Simple UI prototype for nuCypher network.
+Application can be started on Windows, Linux, macOS
 
 ## Idea:
 
@@ -26,6 +27,8 @@ We can use usual .Net Core ASP.Net MVC to build a desktop application.
 
 * Build application:
   * from project folder run: dotnet electronize build /target win
+  * from project folder run: dotnet electronize build /target linux
+  * from project folder run: dotnet electronize build /target osx (only on Linux or macOS)
   * go to output path (look at console)
   * run .exe file
   
