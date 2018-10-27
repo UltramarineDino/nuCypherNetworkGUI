@@ -6,6 +6,7 @@ Application can be started on Windows, Linux, macOS
 ## Idea:
 
 Create cross platform desktop application. Easy to deploy with minimum or nothing setup actions.
+Ready build sample for Win64 in builds folder.
 
 ## How:
 
@@ -19,7 +20,15 @@ We can use usual .Net Core ASP.Net MVC to build a desktop application.
 
 * Development environment setup:
   * Need .Net Core (2.0 for this sample)
-  * Node.js 8.6.0 or above
+  * Node.js 8.6.0 or above.
+  I recommend use nvm for Node install
+  
+  If You have a problem with self signed certificate, try this in console:
+  "npm config set strict-ssl false"
+  
+  If You have a problem with electron install, try this
+  "npm install electron -g"
+  
 * Use command in project folder:
     * dotnet restore
     * dotnet electronize init
