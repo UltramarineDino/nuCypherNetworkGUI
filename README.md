@@ -5,7 +5,6 @@ Simple UI prototype for nuCypher network.
 ## Idea:
 
 Create cross platform desktop application. Easy to deploy with minimum or nothing setup actions.
-Easy deploy with minimum or nothing setup actions.
 
 ## How:
 
